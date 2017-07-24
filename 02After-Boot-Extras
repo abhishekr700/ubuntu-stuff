@@ -1,0 +1,43 @@
+#################WORTH READING :::: https://www.lifewire.com/things-to-do-installing-ubuntu-2200611  ############
+
+
+###5. Install Unity Tweak Tool
+
+###NVIDIA Drivers
+http://www.omgubuntu.co.uk/2015/08/ubuntu-nvidia-graphics-drivers-ppa-is-ready-for-action
+
+
+###6. Move The Unity Launcher =>
+If you want to move the Unity launcher to the bottom of the screen run the following command in a new Terminal (or install/use Unity Tweak Tool > Unity > Launcher > Position):
+
+gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+
+###15. Install a System Cleaner
+One of my favourite system cleaning apps is BleachBit (free, open source). BleachBit can tackle menial tasks, from clearing your browser’s cache to deleting packages left over from installation, all at the push of a button.
+
+
+###4. Install Media Codecs
+
+
+###8. Decide Where App Menus Show Up
+Application menus appear in Ubuntu’s top panel by default and auto-hide after a set several seconds.
+
+A great way to save space, but also a great way to confuse. When you’re using several apps it’s often hard to know which app the ‘Files’, ‘Edit’, etc. strip at the top of the screen belongs to — or where they’ve suddenly vanished to!
+
+Ubuntu provides options inside the System Settings > Appearance pane that allow you to choose where app menus appear.
+
+If you’d rather see menus inside the window of the app they belong to:
+
+    Go to ‘System Settings > Appearance’
+    Select the ‘Behavior’ tab
+    Find the section headed: ‘Show the Menus for a Window’
+    Check (click) the circle next to ‘In the window’s title bar’
+
+To make application menus ‘Always Show’:
+
+    Go to ‘System Settings > Appearance’
+    Select the ‘Behavior’ tab
+    Find the section headed: ‘Menus visibility’
+    Check (click) the circle next to ‘Always displayed’
+
+> Also enable workspaces here.

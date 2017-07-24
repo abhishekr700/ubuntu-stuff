@@ -1,0 +1,26 @@
+Install all .debs from a folder =>
+sudo dpkg -i *.deb
+
+###Install missing dependencies of above ones =>
+sudo apt-get -f install
+
+###then =>
+sudo apt-get update
+
+###then =>
+sudo apt-get upgrade
+
+###Install Additional Drivers (Mainly Graphic ones) =>
+1.Open up the ‘Software & Updates’ tool from the Unity Dash
+2.Click the ‘Additional Drivers’ tab
+3.Follow any on-screen prompts to check for, install and apply any changes 
+
+###5. Enable ‘Minimise on Click' =>
+Click on an app launcher icon to open an app. Click on the same icon again to minimise the app.
+That may be, but it is not the default behaviour in Unity — which can be off-putting to new users. It’s also not obvious how to enable it.
+
+Run the following command (or install/use Unity Tweak Tool > Unity > Launcher > Minimise):
+
+gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
+
+

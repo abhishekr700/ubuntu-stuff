@@ -1,0 +1,8 @@
+list all packages using
+apt list --installed
+
+
+The following command in the terminal grabs the list of installed packages and downloads, packages will be stored at /var/cache/apt/archives
+Make sure to clean that folder before.
+
+dpkg -l | grep "^ii"| awk ' {print $2} ' | xargs sudo apt-get -y --force-yes install --reinstall --download-only

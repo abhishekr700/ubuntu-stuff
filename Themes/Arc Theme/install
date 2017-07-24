@@ -1,0 +1,31 @@
+Theme Repo: https://github.com/horst3180/arc-theme
+
+#Add repo
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list"
+
+#Update packages & install theme
+sudo apt-get update && sudo apt-get install arc-theme
+
+#D/L key to avoid errors
+wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
+
+#Add that key
+sudo apt-key add - < Release.key
+
+
+
+#How To Set Theme
+Set Arc Theme on Ubuntu
+
+To change GTK theme on Ubuntu you need to use a third-party tool. Unity Tweak Tool is highly recommended.
+
+sudo apt-get install unity-tweak-tool
+
+ This app is freely available from Ubuntu Software. Click the button below to be prompted to install it.
+
+Once both app and theme are installed you can open Unity tweak tool and switch your GTK theme to Arc:
+
+    Open Unity Tweak Tool
+    Go to Appearance > Theme
+    Select ‘Arc’
+
