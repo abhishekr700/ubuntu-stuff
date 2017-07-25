@@ -1,0 +1,18 @@
+Tool Link: https://github.com/wifiphisher/wifiphisher
+
+##Installing WifiPhisher
+1. Get the latest release from github repo. Avoid clone, it may be broken
+2. Goto directory and run
+	sudo python setup.py install
+3. You can use tool via 
+	wifiphisher
+
+
+#Installing Additional Scenarios 
+
+Repo: https://github.com/wifiphisher/extra-phishing-pages
+
+1. Move the scenario folder to {wifiphisher_dir}/wifiphisher/data/phishing-pages
+2. Run 
+	sudo python setup.py install
+3. Done !
