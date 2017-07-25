@@ -1,0 +1,68 @@
+##Starting HOTSPOT
+
+1. Install hostapd
+2. Configure hostapd.conf file.
+3. Run command 
+	hostapd hostapd.conf
+4. Note: 
+	1)This hotspot will be seen but noone would be able to connect unless you have a DHCP server to assign
+	  IP addresses to clients.
+	2)Better do 
+		airmon-ng check
+		airmon-ng check kill
+	before doing all these steps. Otherwise hotspot stops suddenly in between.
+
+   
+#Hostapd configs taken from : https://nims11.wordpress.com/2012/04/27/hostapd-the-linux-way-to-create-virtual-wifi-access-point/comment-page-20/
+
+
+##Troubleshooting
+
+Link: https://askubuntu.com/questions/472794/hostapd-error-nl80211-could-not-configure-driver-mode
+
+My Work :  I just used
+		service network-manager stop
+	This stopped the service and after I was done, I restarted it by
+		service network-manager restart
+
+	To keep using wifi via other adapter, follow Answer 1 below, and afterwards, turn on PCI wifi (this will stop hotspot)
+	and then restart hostapd.
+
+Answer Suggested 1: 
+	As @bain has rightly pointed out, there is a bug raised in launchpad for this very purpose.
+	Run commands : <Replace wlano & IP accordingly>
+
+		sudo nmcli nm wifi off
+		sudo rfkill unblock wlan
+
+		sudo ifconfig wlan0 10.15.0.1/24 up
+		sleep 1
+		sudo service isc-dhcp-server restart
+		sudo service hostapd restart
+
+	The first two lines stop wlan from network manager, and then unblocks the interface, so ifconfig can work.
+
+	UPDATE: But if for the first command you get the error message Error: Object 'nm' is unknown then use this instead:
+
+		sudo nmcli radio wifi off
+
+	The next commands uses ifconfig to bring up wlan and allows a second's delay, 
+	then restart the dhcp server (though I did not need this restart in my setup), and finally start the hostapd service.
+
+	It should now start w/o any issues.
+
+Answer Suggested 2: 
+
+	I just had this error on Raspberry pi running Kali linux and hostapd 2.4 I suspected it is because 
+	some other network processes are keeping the interface busy, so I ran this airmon-ng command that checks and kills and 
+	processes that might use the wifi card:
+
+		airmon-ng check kill
+
+	To just see any network processes without killing them, use airmon-ng check. After I killed them, I started hostapd again
+	 and no errors came up anymore.
+
+	For some other network functionality you might need those processes, I restarted the raspberry for that, 
+	but they can also be started individually.
+
+

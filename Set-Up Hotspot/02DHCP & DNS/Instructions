@@ -1,0 +1,9 @@
+###Starting Server
+
+1. Install dnsmasq
+2. Configure dnsmasq.conf
+3. Run command:
+	dnsmasq -C dnsmasq.conf
+   This will start the DNS & DHCP server.
+
+# dnsmasq.conf taken from https://www.psattack.com/articles/20160410/setting-up-a-wireless-access-point-in-kali/
